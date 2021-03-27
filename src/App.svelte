@@ -20,7 +20,7 @@
 	function reset(event) {
 		// TODO former result must go into roster of operations
 		roster = new Roster();
-		roster.push({ operation: 'result', value: result, result});
+		roster.push({ operation: "result", value: result, result });
 		result = 0;
 	}
 
@@ -30,12 +30,9 @@
 		roster = roster;
 		next_operation = item.operation;
 		next_operand = item.value;
+		// TODO removal should also recalculate result
 	}
 </script>
-
-<pre>
-	TODO: remove operations from list
-</pre>
 
 <OpsList list={roster.list} size="5" on:remove={removeOperation} />
 <Display {result} />
