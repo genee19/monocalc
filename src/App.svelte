@@ -24,7 +24,6 @@
 </script>
 
 <pre>
-	TODO: smart limit on the displayed length of OpsList
 	TODO: remove operations from list
 </pre>
 
