@@ -1,8 +1,8 @@
 <script>
-	import Display from './Display.svelte';
-	import Controls from './Controls.svelte';
-	import OpsList from './OpsList.svelte';
-	import {calc, operations} from './Calc.js'
+	import Display from "./Display.svelte";
+	import Controls from "./Controls.svelte";
+	import OpsList from "./OpsList.svelte";
+	import { calc, operations } from "./Calc.js";
 	import Roster from "./Roster.js";
 
 	let result = 0;
@@ -11,9 +11,9 @@
 	let roster = new Roster();
 
 	function step(event) {
-		let {operation, value, ...rest} = event.detail;
+		let { operation, value, ...rest } = event.detail;
 		result = calc(operation, result, value);
-		roster.push({operation, result, value});
+		roster.push({ operation, result, value });
 		roster = roster;
 	}
 
@@ -27,6 +27,12 @@
 	TODO: remove operations from list
 </pre>
 
-<OpsList list={roster.list} size=5 />
-<Display {result}/>
-<Controls validOperations={Object.keys(operations)} on:commit={step} on:reset={reset} bind:operation={next_operation} bind:value={next_operand}/> = {calc(next_operation, result, next_operand)}
+<OpsList list={roster.list} size="5" />
+<Display {result} />
+<Controls
+	validOperations={Object.keys(operations)}
+	on:commit={step}
+	on:reset={reset}
+	bind:operation={next_operation}
+	bind:value={next_operand}
+/> = {calc(next_operation, result, next_operand)}
