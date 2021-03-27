@@ -5,7 +5,7 @@
 	import {calc, operations} from './Calc.js'
 
 	let result = 0;
-	let next_operation = '+';
+	let next_operation = Object.keys(operations)[0];
 	let next_operand;
 
 	function step(event) {
