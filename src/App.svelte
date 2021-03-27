@@ -27,6 +27,6 @@
 	TODO: remove operations from list
 </pre>
 
-<OpsList list={roster.list} />
+<OpsList list={roster.list} size=5 />
 <Display {result}/>
 <Controls validOperations={Object.keys(operations)} on:commit={step} on:reset={reset} bind:operation={next_operation} bind:value={next_operand}/> = {calc(next_operation, result, next_operand)}
