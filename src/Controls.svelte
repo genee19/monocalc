@@ -1,9 +1,9 @@
 <script>
 	import { createEventDispatcher } from "svelte";
 
-	export let operation = '+';
 	export let value = 0;
 	export let validOperations;
+	export let operation = validOperations[0];
 
 	let armedForReset = false;
 
