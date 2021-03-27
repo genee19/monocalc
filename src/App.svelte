@@ -19,7 +19,17 @@
 
 	function reset(event) {
 		// TODO former result must go into roster of operations
+		roster = new Roster();
+		roster.push({ operation: 'result', value: result, result});
 		result = 0;
+	}
+
+	function removeOperation(event) {
+		let _, item;
+		[_, item] = roster.remove(event.detail);
+		roster = roster;
+		next_operation = item.operation;
+		next_operand = item.value;
 	}
 </script>
 
@@ -27,7 +37,7 @@
 	TODO: remove operations from list
 </pre>
 
-<OpsList list={roster.list} size="5" />
+<OpsList list={roster.list} size="5" on:remove={removeOperation} />
 <Display {result} />
 <Controls
 	validOperations={Object.keys(operations)}
