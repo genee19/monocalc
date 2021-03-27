@@ -1,5 +1,5 @@
 <script>
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from "svelte";
 
 	export let operation = '+';
 	export let value = 0;
@@ -13,9 +13,8 @@
 
 	function catchOperationChange(event) {
 		if (event.key == "Enter") {
-
 			if (armedForReset) {
-				flush('reset', {});
+				flush("reset", {});
 				armedForReset = false;
 			} else {
 				flush("commit", { operation, value });
@@ -32,7 +31,6 @@
 			// TODO handle up arrow
 			// TODO handle down arrow
 		}
-
 	}
 </script>
 
@@ -43,4 +41,9 @@
 	&nbsp;
 </p>
 
-{operation}<input type="number" bind:value={value} min=0 on:keyup={catchOperationChange}>
+{operation}<input
+	type="number"
+	bind:value
+	min="0"
+	on:keyup={catchOperationChange}
+/>
