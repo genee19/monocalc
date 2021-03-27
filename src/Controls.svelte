@@ -9,8 +9,6 @@
 
 	const flush = createEventDispatcher();
 
-	const validValuesRegexp = /0-9/;
-
 	function catchOperationChange(event) {
 		if (event.key == "Enter") {
 			if (armedForReset) {
