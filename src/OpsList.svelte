@@ -1,5 +1,11 @@
-<script></script>
+<script>
+	export let list = [];
+</script>
+
+{list.length}
 
 <ul>
-	<li>list of previous ops</li>
+	{#each list as item}
+	<li>{item.operation}{item.value}</li>
+	{/each}
 </ul>
